@@ -30,6 +30,7 @@
         "battery",
         // "battery#bat2",
         "clock",
+        "custom/notification",
         "custom/power",
         "tray"
     ],
@@ -201,6 +202,27 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/notification": {
+        // swaync control centre. Left click toggles the panel, right click DND.
+        // -swb emits {"text","alt","tooltip","class"}; the class drives the CSS below.
+        "tooltip": true,
+        "format": "{icon}",
+        "format-icons": {
+            "notification":             "",
+            "none":                     "",
+            "dnd-notification":         "",
+            "dnd-none":                 "",
+            "inhibited-notification":   "",
+            "inhibited-none":           "",
+            "dnd-inhibited-notification": "",
+            "dnd-inhibited-none":       ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw"
     },
     "custom/power": {
           "format" : "⏻ ",
