@@ -1,0 +1,17 @@
+# Hyprland regenerates this stub on every start when only hyprland.lua exists.
+# It is unused (the .lua config takes precedence) but cannot be prevented.
+.config/hypr/hyprland.conf
+
+# Local-only working notes and session logs — not for the remote
+CHANGES-*.md
+
+# Backups and pre-migration references kept on disk for rollback
+*.bak
+*.legacy
+*.orig
+*~
+*.swp
+
+# Superseded by monitors.lua (EDID-keyed); kept on disk for reference only
+.config/hypr/hmonitors.conf
+.config/hypr/wmonitors.conf
